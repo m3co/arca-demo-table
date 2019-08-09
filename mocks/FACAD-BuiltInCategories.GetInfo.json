@@ -1,1 +1,0 @@
-{"ID":"7501a2c8-5588-4d55-b6f8-5096f0cc67a8","Method":"GetInfo","Context":{"Source":"FACAD-BuiltInCategories"},"Result":{"Actions":{"Insert":false,"Delete":false,"Update":false},"Fields":[{"Name":"BuiltInCategory","Type":"String","Primary":true,"Required":false,"Editable":false,"Combobox":null,"Select":null}]},"Error":null}
