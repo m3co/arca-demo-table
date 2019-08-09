@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 
-import { Table } from 'arca-table/build/Table';
+import { Table } from 'arca-table';
 
 import { ARCASocket, State, Row, FACADCFT as Model } from 'arca-redux';
 

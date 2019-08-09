@@ -24,10 +24,12 @@ render(
       socket={socket} />
     <FACADSchedules
       socket={socket} />
+    {/*
     <FACADParamsBIC
       socket={socket} />
     <FACADBuiltInCategories
       socket={socket} />
+    */}
   </div>,
   document.getElementById("root")
 );
