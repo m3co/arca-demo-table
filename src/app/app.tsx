@@ -2,7 +2,8 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-import { AAUTasksGantt } from './TasksGanttAAU';
+import { AAUQTO } from './AAUQTO';
+import { AAUTasksGantt } from './AAUTasksGantt';
 import { FACADSchedules } from './FACAD-Schedules';
 import { FACADParamsBIC } from './FACAD-ParamsBIC';
 import { FACADCFT } from './FACAD-CFT';
@@ -23,6 +24,7 @@ render(
     <button onClick={showState}>Show state</button><br />
     <FACADCFT socket={socket} />
     <FACADSchedules socket={socket} />
+    <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
       {/*
     <FACADParamsBIC socket={socket} />
