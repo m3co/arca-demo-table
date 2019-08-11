@@ -1,6 +1,6 @@
 {
-  "name": "arca-demo-whatever",
-  "version": "2.0.0",
+  "name": "arca-demo",
+  "version": "2.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -35,15 +35,14 @@
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.8.5",
     "@types/socket.io-client": "^1.4.32",
     "@types/uuid": "^3.4.5",
-    "arca-redux": "^2.0.1",
-    "arca-table": "^1.0.2",
+    "arca-table": "^1.0.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "redux": "^4.0.4",

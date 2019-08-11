@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
+import { AAUTasksGantt } from './TasksGanttAAU';
 import { FACADSchedules } from './FACAD-Schedules';
 import { FACADParamsBIC } from './FACAD-ParamsBIC';
 import { FACADCFT } from './FACAD-CFT';
@@ -19,17 +20,14 @@ function showState(): void {
 
 render(
   <div>
-    <button onClick={showState}>Show state</button>
-    <FACADCFT
-      socket={socket} />
-    <FACADSchedules
-      socket={socket} />
-    {/*
-    <FACADParamsBIC
-      socket={socket} />
-    <FACADBuiltInCategories
-      socket={socket} />
-    */}
+    <button onClick={showState}>Show state</button><br />
+    <FACADCFT socket={socket} />
+    <FACADSchedules socket={socket} />
+    <AAUTasksGantt socket={socket} />
+      {/*
+    <FACADParamsBIC socket={socket} />
+    <FACADBuiltInCategories socket={socket} />
+      */}
   </div>,
   document.getElementById("root")
 );
