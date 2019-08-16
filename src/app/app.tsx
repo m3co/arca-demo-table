@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
+import { AAU } from './AAU';
 import { AAUQTO } from './AAUQTO';
 import { AAUTasksGantt } from './AAUTasksGantt';
 import { FACADSchedules } from './FACAD-Schedules';
@@ -24,12 +25,13 @@ render(
     <button onClick={showState}>Show state</button><br />
     <FACADCFT socket={socket} />
     <FACADSchedules socket={socket} />
+    <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
-      {/*
-    <FACADParamsBIC socket={socket} />
-    <FACADBuiltInCategories socket={socket} />
-      */}
+    {/*
+<FACADParamsBIC socket={socket} />
+<FACADBuiltInCategories socket={socket} />
+    */}
   </div>,
   document.getElementById("root")
 );

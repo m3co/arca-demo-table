@@ -29,12 +29,28 @@ export class FACADCFT
     props.socket.Subscribe('FACAD-CFT');
   }
 
-  private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-CFT', row);
+  private onUpdate = (Row: Row): void => {
+    const row = {...Row} as Model["Row"];
+    if (row.Category && row.FamilyType && row.Key) {
+      if (!row.Project) row.Project = null;
+      if (row.KeynoteField === '') row.KeynoteField = null;
+      if (row.ConstraintField === '') row.ConstraintField = null;
+      if (row.QuantityField === '') row.QuantityField = null;
+      this.props.socket.Update('FACAD-CFT', row);
+    }
   }
 
-  private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('FACAD-CFT', row);
+  private onInsert = (Row: Row): string => {
+    const row = {...Row} as Model["Row"];
+    if (row.Category && row.FamilyType && row.Key) {
+      if (!row.Project) row.Project = null;
+      if (row.KeynoteField === '') row.KeynoteField = null;
+      if (row.ConstraintField === '') row.ConstraintField = null;
+      if (row.QuantityField === '') row.QuantityField = null;
+
+      return this.props.socket.Insert('FACAD-CFT', row);
+    }
+    return '';
   }
 
   private onDelete = (row: Row): void => {
@@ -44,15 +60,15 @@ export class FACADCFT
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
-      Project: 0,
+      Project: null,
       Category: '',
       FamilyType: '',
       Key: '',
       BuiltInCategory: 'INVALID',
-      ReportType: '',
-      KeynoteField: '',
-      ConstraintField: '',
-      QuantityField: '',
+      ReportType: 'Schedule',
+      KeynoteField: 'Keynote',
+      ConstraintField: null,
+      QuantityField: null,
     };
     return row;
   }
