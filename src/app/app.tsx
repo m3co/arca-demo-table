@@ -7,6 +7,7 @@ import { AAUQTO } from './AAUQTO';
 import { AAUTasksGantt } from './AAUTasksGantt';
 import { FACADSchedules } from './FACAD-Schedules';
 import { FACADParamsBIC } from './FACAD-ParamsBIC';
+import { FACADpreCFT } from './FACAD-preCFT';
 import { FACADCFT } from './FACAD-CFT';
 import { FACADBuiltInCategories } from './FACAD-BuiltInCategories';
 
@@ -24,6 +25,7 @@ render(
   <div>
     <button onClick={showState}>Show state</button><br />
     <FACADCFT socket={socket} />
+    <FACADpreCFT socket={socket} />
     <FACADSchedules socket={socket} />
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
