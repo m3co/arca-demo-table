@@ -31,7 +31,7 @@ export class FACADCFT
 
   private onUpdate = (Row: Row): void => {
     const row = {...Row} as Model["Row"];
-    if (row.Category && row.FamilyType && row.Key) {
+    if (row.Category && row.Family && row.Name && row.Key) {
       if (!row.Project) row.Project = null;
       if (row.KeynoteField === '') row.KeynoteField = null;
       if (row.ConstraintField === '') row.ConstraintField = null;
@@ -42,7 +42,7 @@ export class FACADCFT
 
   private onInsert = (Row: Row): string => {
     const row = {...Row} as Model["Row"];
-    if (row.Category && row.FamilyType && row.Key) {
+    if (row.Category && row.Family && row.Name && row.Key) {
       if (!row.Project) row.Project = null;
       if (row.KeynoteField === '') row.KeynoteField = null;
       if (row.ConstraintField === '') row.ConstraintField = null;
@@ -62,7 +62,8 @@ export class FACADCFT
       ID: 0,
       Project: null,
       Category: '',
-      FamilyType: '',
+      Family: '',
+      Name: '',
       Key: '',
       BuiltInCategory: 'INVALID',
       ReportType: 'Schedule',
