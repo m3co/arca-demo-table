@@ -45,7 +45,8 @@ export class FACADpreCFT
     const row: Model["Row"] = {
       ID: 0,
       Category: '',
-      FamilyType: '',
+      Family: '',
+      Name: '',
       PathName: '',
     };
     return row;
