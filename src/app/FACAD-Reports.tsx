@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, FACADSchedules as Model } from 'arca-redux';
+import { ARCASocket, State, Row, FACADReports as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class FACADSchedules
-  extends React.Component<Props, State['Source']['FACAD-Schedules']>
+export class FACADReports
+  extends React.Component<Props, State['Source']['FACAD-Reports']>
 {
-  public readonly state: State['Source']['FACAD-Schedules'] = {
+  public readonly state: State['Source']['FACAD-Reports'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,32 +21,36 @@ export class FACADSchedules
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source["FACAD-Schedules"]);
+      this.setState(state.Source["FACAD-Reports"]);
     });
 
-    props.socket.Select('FACAD-Schedules');
-    props.socket.GetInfo('FACAD-Schedules');
-    props.socket.Subscribe('FACAD-Schedules');
+    props.socket.Select('FACAD-Reports');
+    props.socket.GetInfo('FACAD-Reports');
+    props.socket.Subscribe('FACAD-Reports');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-Schedules', row);
+    this.props.socket.Update('FACAD-Reports', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('FACAD-Schedules', row);
+    return this.props.socket.Insert('FACAD-Reports', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('FACAD-Schedules', row);
+    this.props.socket.Delete('FACAD-Reports', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
       BuiltInCategory: 'INVALID',
+      ReportType: 'Schedule',
       Name: '',
       PathName: '',
+      Field1: 'Keynote',
+      Field2: 'Level',
+      Field3: 'Count'
     };
     return row;
   }
