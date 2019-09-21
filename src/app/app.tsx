@@ -6,6 +6,7 @@ import { AAU } from './AAU';
 import { AAUQTO } from './AAUQTO';
 import { AAUTasksGantt } from './AAUTasksGantt';
 import { FACADReports } from './FACAD-Reports';
+import { FACADReportFilters } from './FACAD-ReportFilters';
 import { FACADpreCFT } from './FACAD-preCFT';
 import { FACADCFT } from './FACAD-CFT';
 
@@ -27,6 +28,7 @@ render(
     <FACADCFT socket={socket} />
     <FACADpreCFT socket={socket} />
     <FACADReports socket={socket} />
+    <FACADReportFilters socket={socket} />
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
