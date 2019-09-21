@@ -46,7 +46,7 @@ export class FACADpreCFT
       ID: 0,
       Category: '',
       Family: '',
-      Name: '',
+      Type: '',
       PathName: '',
     };
     return row;
