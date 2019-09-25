@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, AAUTasksGantt as Model } from 'arca-redux';
+import { ARCASocket, State, Row, Projects as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class AAUTasksGantt
-  extends React.Component<Props, State['Source']['AAU-Tasks-Gantt']>
+export class Projects
+  extends React.Component<Props, State['Source']['Projects']>
 {
-  public readonly state: State['Source']['AAU-Tasks-Gantt'] = {
+  public readonly state: State['Source']['Projects'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,32 +21,32 @@ export class AAUTasksGantt
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source['AAU-Tasks-Gantt']);
+      this.setState(state.Source['Projects']);
     });
 
-    props.socket.Select('AAU-Tasks-Gantt');
-    props.socket.GetInfo('AAU-Tasks-Gantt');
-    props.socket.Subscribe('AAU-Tasks-Gantt');
+    props.socket.Select('Projects');
+    props.socket.GetInfo('Projects');
+    props.socket.Subscribe('Projects');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('AAU-Tasks-Gantt', row);
+    this.props.socket.Update('Projects', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('AAU-Tasks-Gantt', row);
+    return this.props.socket.Insert('Projects', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('AAU-Tasks-Gantt', row);
+    this.props.socket.Delete('Projects', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
-      Key: '',
-      Constraint: '',
+      ID: 0,
+      Name: '',
+      Description: '',
       Start: null,
-      End: null,
     };
     return row;
   }

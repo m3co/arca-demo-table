@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
+import { Projects } from './Projects';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAUQTO';
 import { AAUTasksGantt } from './AAUTasksGantt';
@@ -25,6 +26,7 @@ render(
   <div>
     <Favicon url="/favicon.ico" />
     <button onClick={showState}>Show state</button><br />
+    <Projects socket={socket} />
     <FACADCFT socket={socket} />
     <FACADpreCFT socket={socket} />
     <FACADReports socket={socket} />
