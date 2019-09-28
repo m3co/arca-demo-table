@@ -3,6 +3,7 @@ import * as React from 'react';
 import { render } from 'react-dom';
 
 import { Projects } from './Projects';
+import { Concretize } from './Concretize';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAUQTO';
 import { AAUTasksGantt } from './AAUTasksGantt';
@@ -22,9 +23,10 @@ function showState(): void {
 }
 
 render(
-  <div>
+  <React.Fragment>
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
+    <Concretize socket={socket} />
     <FACADCFT socket={socket} />
     <FACADpreCFT socket={socket} />
     <FACADReports socket={socket} />
@@ -32,6 +34,6 @@ render(
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
-  </div>,
+  </React.Fragment>,
   document.getElementById("root")
 );
