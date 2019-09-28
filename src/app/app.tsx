@@ -13,7 +13,6 @@ import { FACADCFT } from './FACAD-CFT';
 
 import { ARCASocket, reducer } from 'arca-redux';
 import { createStore } from 'redux';
-import Favicon from 'react-favicon';
 
 const store = createStore(reducer);
 const socket = new ARCASocket(store);
@@ -24,7 +23,6 @@ function showState(): void {
 
 render(
   <div>
-    <Favicon url="/favicon.ico" />
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
     <FACADCFT socket={socket} />
