@@ -51,6 +51,7 @@ export class FACADBuiltInCategories
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"FACAD-BuiltInCategories"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

@@ -55,6 +55,7 @@ export class FACADpreCFT
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"FACAD-preCFT"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

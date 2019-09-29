@@ -54,6 +54,7 @@ export class AAUTasksGantt
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"AAU-Tasks-Gantt"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

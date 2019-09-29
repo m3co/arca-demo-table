@@ -54,6 +54,7 @@ export class AAUQTO
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"AAU-QTO"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

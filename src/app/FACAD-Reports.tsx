@@ -58,6 +58,7 @@ export class FACADReports
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"FACAD-Reports"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

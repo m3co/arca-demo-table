@@ -77,6 +77,7 @@ export class FACADCFT
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"FACAD-CFT"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

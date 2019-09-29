@@ -59,6 +59,7 @@ export class Concretize
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"Concretize"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

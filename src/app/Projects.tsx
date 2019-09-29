@@ -54,6 +54,7 @@ export class Projects
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
+      Title={"Projects"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
