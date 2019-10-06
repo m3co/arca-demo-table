@@ -11,6 +11,7 @@ import { FACADReports } from './FACAD-Reports';
 import { FACADReportFilters } from './FACAD-ReportFilters';
 import { FACADpreCFT } from './FACAD-preCFT';
 import { FACADCFT } from './FACAD-CFT';
+import { FACADCFTFilters } from './FACAD-CFTFilters';
 
 import { ARCASocket, reducer } from 'arca-redux';
 import { createStore } from 'redux';
@@ -28,6 +29,7 @@ render(
     <Projects socket={socket} />
     <Concretize socket={socket} />
     <FACADCFT socket={socket} />
+    <FACADCFTFilters socket={socket} />
     <FACADpreCFT socket={socket} />
     <FACADReports socket={socket} />
     <FACADReportFilters socket={socket} />
