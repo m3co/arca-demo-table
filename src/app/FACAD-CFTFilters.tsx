@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, FACADReportFilters as Model } from 'arca-redux';
+import { ARCASocket, State, Row, FACADCFTFilters as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class FACADReportFilters
-  extends React.Component<Props, State['Source']['FACAD-ReportFilters']>
+export class FACADCFTFilters
+  extends React.Component<Props, State['Source']['FACAD-CFTFilters']>
 {
-  public readonly state: State['Source']['FACAD-ReportFilters'] = {
+  public readonly state: State['Source']['FACAD-CFTFilters'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,30 +21,30 @@ export class FACADReportFilters
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source["FACAD-ReportFilters"]);
+      this.setState(state.Source["FACAD-CFTFilters"]);
     });
 
-    props.socket.Select('FACAD-ReportFilters');
-    props.socket.GetInfo('FACAD-ReportFilters');
-    props.socket.Subscribe('FACAD-ReportFilters');
+    props.socket.Select('FACAD-CFTFilters');
+    props.socket.GetInfo('FACAD-CFTFilters');
+    props.socket.Subscribe('FACAD-CFTFilters');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-ReportFilters', row);
+    this.props.socket.Update('FACAD-CFTFilters', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('FACAD-ReportFilters', row);
+    return this.props.socket.Insert('FACAD-CFTFilters', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('FACAD-ReportFilters', row);
+    this.props.socket.Delete('FACAD-CFTFilters', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
-      ReportID: 0,
+      CFTID: 0,
       Comparator: '',
       ValueType: '',
       Field: '',
@@ -56,7 +56,7 @@ export class FACADReportFilters
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
-      Title={"FACAD-ReportFilters"}
+      Title={"FACAD-CFTFilters"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
