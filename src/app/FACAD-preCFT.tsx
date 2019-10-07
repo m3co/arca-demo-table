@@ -44,7 +44,6 @@ export class FACADpreCFT
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
-      Category: '',
       Family: '',
       Type: '',
       PathName: '',
