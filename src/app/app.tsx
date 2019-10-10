@@ -2,11 +2,13 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
+import { BudgetAAU } from './Budget-AAU';
+import { BudgetAAUvsGeneral } from './Budget-AAU-vs-General';
 import { Projects } from './Projects';
 import { Concretize } from './Concretize';
 import { AAU } from './AAU';
-import { AAUQTO } from './AAUQTO';
-import { AAUTasksGantt } from './AAUTasksGantt';
+import { AAUQTO } from './AAU-QTO';
+import { AAUTasksGantt } from './AAU-Tasks-Gantt';
 import { FACADReports } from './FACAD-Reports';
 import { FACADReportFilters } from './FACAD-ReportFilters';
 import { FACADpreCFT } from './FACAD-preCFT';
@@ -27,6 +29,8 @@ render(
   <React.Fragment>
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
+    <BudgetAAU socket={socket} />
+    <BudgetAAUvsGeneral socket={socket} />
     <Concretize socket={socket} />
     <FACADCFT socket={socket} />
     <FACADCFTFilters socket={socket} />

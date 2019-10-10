@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, FACADBuiltInCategories as Model } from 'arca-redux';
+import { ARCASocket, State, Row, BudgetAAU as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class FACADBuiltInCategories
-  extends React.Component<Props, State['Source']['FACAD-BuiltInCategories']>
+export class BudgetAAU
+  extends React.Component<Props, State['Source']['Budget-AAU']>
 {
-  public readonly state: State['Source']['FACAD-BuiltInCategories'] = {
+  public readonly state: State['Source']['Budget-AAU'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,29 +21,38 @@ export class FACADBuiltInCategories
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source['FACAD-BuiltInCategories']);
+      this.setState(state.Source['Budget-AAU']);
     });
 
-    props.socket.Select('FACAD-BuiltInCategories');
-    props.socket.GetInfo('FACAD-BuiltInCategories');
-    props.socket.Subscribe('FACAD-BuiltInCategories');
+    props.socket.Select('Budget-AAU');
+    props.socket.GetInfo('Budget-AAU');
+    props.socket.Subscribe('Budget-AAU');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-BuiltInCategories', row);
+    this.props.socket.Update('Budget-AAU', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('FACAD-BuiltInCategories', row);
+    return this.props.socket.Insert('Budget-AAU', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('FACAD-BuiltInCategories', row);
+    this.props.socket.Delete('Budget-AAU', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
-      BuiltInCategory: 'INVALID',
+      Project: 0,
+      Key: null,
+      Description: '',
+      Unit: '',
+      Q: null,
+      P: null,
+      Estimated: 0,
+      TotalEstimated: 0,
+      SummEstimated: 0,
+      RateEstimated: 0,
     };
     return row;
   }
@@ -51,7 +60,7 @@ export class FACADBuiltInCategories
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
-      Title={"FACAD-BuiltInCategories"}
+      Title={"Budget-AAU"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
