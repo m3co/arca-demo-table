@@ -35,9 +35,9 @@ render(
     <Concretize socket={socket} />
     <FACADCFT socket={socket} />
     <FACADCFTFilters socket={socket} />
-    <FACADpreCFT socket={socket} />
     <FACADReports socket={socket} />
     <FACADReportFilters socket={socket} />
+    <FACADpreCFT socket={socket} />
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
