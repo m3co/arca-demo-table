@@ -14,6 +14,7 @@ import { FACADReportFilters } from './FACAD-ReportFilters';
 import { FACADpreCFT } from './FACAD-preCFT';
 import { FACADCFT } from './FACAD-CFT';
 import { FACADCFTFilters } from './FACAD-CFTFilters';
+import { TasksMonthCashFlowAAU } from './Tasks-Month-CashFlow-AAU';
 
 import { ARCASocket, reducer } from 'arca-redux';
 import { createStore } from 'redux';
@@ -40,6 +41,7 @@ render(
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
+    <TasksMonthCashFlowAAU socket={socket} />
   </React.Fragment>,
   document.getElementById("root")
 );
