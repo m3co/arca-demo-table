@@ -45,6 +45,8 @@ export class AAUTasksGantt
     const row: Model["Row"] = {
       Key: '',
       Constraint: '',
+      Description: '',
+      Unit: '',
       Start: null,
       End: null,
     };
