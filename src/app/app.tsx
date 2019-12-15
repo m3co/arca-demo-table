@@ -10,6 +10,13 @@ import { Concretize } from './Concretize';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAU-QTO';
 import { AAUTasksGantt } from './AAU-Tasks-Gantt';
+
+import { APU } from './APU';
+import { APUQTO } from './APU-QTO';
+import { APUMetaSupplies } from './APU-MetaSupplies';
+import { APUPSupplies } from './APU-P-Supplies';
+import { APUImportSupplies } from './APU-Import-Supplies';
+
 import { FACADReports } from './FACAD-Reports';
 import { FACADReportFilters } from './FACAD-ReportFilters';
 import { FACADpreCFT } from './FACAD-preCFT';
@@ -32,6 +39,11 @@ render(
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
     <Contractors socket={socket} />
+    <APU socket={socket} />
+    <APUQTO socket={socket} />
+    <APUMetaSupplies socket={socket} />
+    <APUPSupplies socket={socket} />
+    <APUImportSupplies socket={socket} />
     <BudgetAAU socket={socket} />
     <BudgetAAUvsGeneral socket={socket} />
     <Concretize socket={socket} />
