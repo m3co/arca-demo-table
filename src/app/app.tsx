@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import { BudgetAAU } from './Budget-AAU';
 import { BudgetAAUvsGeneral } from './Budget-AAU-vs-General';
 import { Projects } from './Projects';
+import { Contractors } from './Contractors';
 import { Concretize } from './Concretize';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAU-QTO';
@@ -30,6 +31,7 @@ render(
   <React.Fragment>
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
+    <Contractors socket={socket} />
     <BudgetAAU socket={socket} />
     <BudgetAAUvsGeneral socket={socket} />
     <Concretize socket={socket} />
