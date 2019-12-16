@@ -11,6 +11,7 @@ import { AAU } from './AAU';
 import { AAUQTO } from './AAU-QTO';
 import { AAUTasksGantt } from './AAU-Tasks-Gantt';
 
+import { APUAssign } from './APU-Assign';
 import { APU } from './APU';
 import { APUQTO } from './APU-QTO';
 import { APUMetaSupplies } from './APU-MetaSupplies';
@@ -39,6 +40,7 @@ render(
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
     <Contractors socket={socket} />
+    <APUAssign socket={socket} />
     <APU socket={socket} />
     <APUQTO socket={socket} />
     <APUMetaSupplies socket={socket} />
