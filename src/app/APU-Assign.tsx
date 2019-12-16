@@ -10,9 +10,9 @@ interface Props {
 }
 
 export class APUAssign
-  extends React.Component<Props, State['Source']['APU-QTO']>
+  extends React.Component<Props, State['Source']['APU-Assign']>
 {
-  public readonly state: State['Source']['APU-QTO'] = {
+  public readonly state: State['Source']['APU-Assign'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,24 +21,24 @@ export class APUAssign
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source['APU-QTO']);
+      this.setState(state.Source['APU-Assign']);
     });
 
-    props.socket.Select('APU-QTO');
-    props.socket.GetInfo('APU-QTO');
-    props.socket.Subscribe('APU-QTO');
+    props.socket.Select('APU-Assign');
+    props.socket.GetInfo('APU-Assign');
+    props.socket.Subscribe('APU-Assign');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('APU-QTO', row);
+    this.props.socket.Update('APU-Assign', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('APU-QTO', row);
+    return this.props.socket.Insert('APU-Assign', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('APU-QTO', row);
+    this.props.socket.Delete('APU-Assign', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
@@ -63,7 +63,7 @@ export class APUAssign
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
-      Title={"APU-QTO"}
+      Title={"APU-Assign"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
