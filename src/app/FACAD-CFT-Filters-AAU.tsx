@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, FACADpreCFT as Model } from 'arca-redux';
+import { ARCASocket, State, Row, FACADCFTFiltersAAU as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class FACADpreCFT
-  extends React.Component<Props, State['Source']['FACAD-preCFT']>
+export class FACADCFTFiltersAAU
+  extends React.Component<Props, State['Source']['FACAD-CFT-Filters-AAU']>
 {
-  public readonly state: State['Source']['FACAD-preCFT'] = {
+  public readonly state: State['Source']['FACAD-CFT-Filters-AAU'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,32 +21,34 @@ export class FACADpreCFT
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source["FACAD-preCFT"]);
+      this.setState(state.Source["FACAD-CFT-Filters-AAU"]);
     });
 
-    props.socket.Select('FACAD-preCFT');
-    props.socket.GetInfo('FACAD-preCFT');
-    props.socket.Subscribe('FACAD-preCFT');
+    props.socket.Select('FACAD-CFT-Filters-AAU');
+    props.socket.GetInfo('FACAD-CFT-Filters-AAU');
+    props.socket.Subscribe('FACAD-CFT-Filters-AAU');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-preCFT', row);
+    this.props.socket.Update('FACAD-CFT-Filters-AAU', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('FACAD-preCFT', row);
+    return this.props.socket.Insert('FACAD-CFT-Filters-AAU', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('FACAD-preCFT', row);
+    this.props.socket.Delete('FACAD-CFT-Filters-AAU', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
-      Family: '',
-      Type: '',
-      PathName: '',
+      CFTID: 0,
+      Comparator: '',
+      ValueType: '',
+      Field: '',
+      Value: '',
     };
     return row;
   }
@@ -54,7 +56,7 @@ export class FACADpreCFT
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
-      Title={"FACAD-preCFT"}
+      Title={"FACAD-CFT-Filters-AAU"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}

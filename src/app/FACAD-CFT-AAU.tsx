@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, FACADCFT as Model } from 'arca-redux';
+import { ARCASocket, State, Row, FACADCFTAAU as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class FACADCFT
-  extends React.Component<Props, State['Source']['FACAD-CFT']>
+export class FACADCFTAAU
+  extends React.Component<Props, State['Source']['FACAD-CFT-AAU']>
 {
-  public readonly state: State['Source']['FACAD-CFT'] = {
+  public readonly state: State['Source']['FACAD-CFT-AAU'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,12 +21,12 @@ export class FACADCFT
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source['FACAD-CFT']);
+      this.setState(state.Source['FACAD-CFT-AAU']);
     });
 
-    props.socket.Select('FACAD-CFT');
-    props.socket.GetInfo('FACAD-CFT');
-    props.socket.Subscribe('FACAD-CFT');
+    props.socket.Select('FACAD-CFT-AAU');
+    props.socket.GetInfo('FACAD-CFT-AAU');
+    props.socket.Subscribe('FACAD-CFT-AAU');
   }
 
   private onUpdate = (Row: Row): void => {
@@ -36,7 +36,7 @@ export class FACADCFT
       if (row.KeynoteField === '') row.KeynoteField = null;
       if (row.ConstraintField === '') row.ConstraintField = null;
       if (row.QuantityField === '') row.QuantityField = null;
-      this.props.socket.Update('FACAD-CFT', row);
+      this.props.socket.Update('FACAD-CFT-AAU', row);
     }
   }
 
@@ -48,13 +48,13 @@ export class FACADCFT
       if (row.ConstraintField === '') row.ConstraintField = null;
       if (row.QuantityField === '') row.QuantityField = null;
 
-      return this.props.socket.Insert('FACAD-CFT', row);
+      return this.props.socket.Insert('FACAD-CFT-AAU', row);
     }
     return '';
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('FACAD-CFT', row);
+    this.props.socket.Delete('FACAD-CFT-AAU', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
@@ -76,7 +76,7 @@ export class FACADCFT
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
-      Title={"FACAD-CFT"}
+      Title={"FACAD-CFT-AAU"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
