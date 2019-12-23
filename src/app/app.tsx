@@ -21,6 +21,7 @@ import { APUImportSupplies } from './APU-Import-Supplies';
 import { FACADReports } from './FACAD-Reports';
 import { FACADReportFilters } from './FACAD-ReportFilters';
 import { FACADpreCFTAAU } from './FACAD-preCFT-AAU';
+import { FACADpreCFTAAUKey } from './FACAD-preCFT-AAU-Key';
 import { FACADCFTAAU } from './FACAD-CFT-AAU';
 import { FACADCFTFiltersAAU } from './FACAD-CFT-Filters-AAU';
 import { TasksMonthCashFlowAAU } from './Tasks-Month-CashFlow-AAU';
@@ -40,6 +41,7 @@ render(
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
     <Contractors socket={socket} />
+    <FACADpreCFTAAUKey socket={socket} />
     <APUAssign socket={socket} />
     <APU socket={socket} />
     <APUQTO socket={socket} />
