@@ -6,7 +6,7 @@ import { BudgetAAU } from './Budget-AAU';
 import { BudgetAAUvsGeneral } from './Budget-AAU-vs-General';
 import { Projects } from './Projects';
 import { Contractors } from './Contractors';
-import { Concretize } from './Concretize';
+import { AAUConcretize } from './Concretize';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAU-QTO';
 import { AAUTasksGantt } from './AAU-Tasks-Gantt';
@@ -48,7 +48,7 @@ render(
     <APUImportSupplies socket={socket} />
     <BudgetAAU socket={socket} />
     <BudgetAAUvsGeneral socket={socket} />
-    <Concretize socket={socket} />
+    <AAUConcretize socket={socket} />
     <FACADCFTAAU socket={socket} />
     <FACADCFTFiltersAAU socket={socket} />
     <FACADReports socket={socket} />

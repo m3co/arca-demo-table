@@ -3,16 +3,16 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row, Concretize as Model } from 'arca-redux';
+import { ARCASocket, State, Row, AAUConcretize as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
 }
 
-export class Concretize
-  extends React.Component<Props, State['Source']['Concretize']>
+export class AAUConcretize
+  extends React.Component<Props, State['Source']['AAU-Concretize']>
 {
-  public readonly state: State['Source']['Concretize'] = {
+  public readonly state: State['Source']['AAU-Concretize'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,24 +21,24 @@ export class Concretize
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source['Concretize']);
+      this.setState(state.Source['AAU-Concretize']);
     });
 
-    props.socket.Select('Concretize');
-    props.socket.GetInfo('Concretize');
-    props.socket.Subscribe('Concretize');
+    props.socket.Select('AAU-Concretize');
+    props.socket.GetInfo('AAU-Concretize');
+    props.socket.Subscribe('AAU-Concretize');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('Concretize', row);
+    this.props.socket.Update('AAU-Concretize', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('Concretize', row);
+    return this.props.socket.Insert('AAU-Concretize', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('Concretize', row);
+    this.props.socket.Delete('AAU-Concretize', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
