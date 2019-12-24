@@ -46,7 +46,7 @@ export class AAUQTO
       Key: '',
       Constraint: '',
       Q: 0,
-      CAD: true,
+      CAD: false,
     };
     return row;
   }
