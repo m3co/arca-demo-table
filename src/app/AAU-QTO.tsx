@@ -34,6 +34,10 @@ export class AAUQTO
   }
 
   private onInsert = (row: Row): string => {
+    const r = row as Model["Row"];
+    if (!(r.Constraint) || !(r.Key)) {
+      return '';
+    }
     return this.props.socket.Insert('AAU-QTO', row);
   }
 
