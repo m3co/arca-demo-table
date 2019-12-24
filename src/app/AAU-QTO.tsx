@@ -43,8 +43,8 @@ export class AAUQTO
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
-      Key: '',
-      Constraint: '',
+      Key: null,
+      Constraint: null,
       Q: 0,
       CAD: false,
     };
