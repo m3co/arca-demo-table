@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { Table } from 'arca-table';
 
-import { ARCASocket, State, Row } from 'arca-redux';
+import { ARCASocket, State, Row, FACADpreCFTAAUKey as Model } from 'arca-redux';
 
 interface Props {
   socket: ARCASocket;
@@ -30,7 +30,9 @@ export class FACADpreCFTAAUKey
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-preCFT-AAU-Key', row);
+    const r = row as Model["Row"];
+    r.Key = null;
+    this.props.socket.Update('FACAD-preCFT-AAU-Key', r);
   }
 
   public render(): JSX.Element {
