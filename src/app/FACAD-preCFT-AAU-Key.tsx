@@ -31,8 +31,13 @@ export class FACADpreCFTAAUKey
 
   private onUpdate = (row: Row): void => {
     const r = row as Model["Row"];
-    r.Key = null;
-    this.props.socket.Update('FACAD-preCFT-AAU-Key', r);
+    const PK: Model["PK"] = {
+      Key: null,
+      Family: r.Family,
+      Type: r.Type,
+    };
+
+    this.props.socket.Update('FACAD-preCFT-AAU-Key', row, { PK });
   }
 
   public render(): JSX.Element {
