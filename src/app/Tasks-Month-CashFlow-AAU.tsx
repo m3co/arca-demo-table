@@ -45,6 +45,8 @@ export class TasksMonthCashFlowAAU
     const row: Model["Row"] = {
       Project: 0,
       Key: '',
+      Description: '',
+      Unit: '',
       TaskStart: null,
       Start: null,
       End: null,
