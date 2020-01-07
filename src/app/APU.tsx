@@ -31,14 +31,14 @@ export class APU
 
   private onUpdate = (Row: Row): void => {
     const row = {...Row} as Model["Row"];
-    if (row.Key && row.Constraint && row.ContractorID) {
+    if (row.Key && row.Constraint && row.ContractorID && row.Estimated > 0 && row.P > 0) {
       this.props.socket.Update('APU', row);
     }
   }
 
   private onInsert = (Row: Row): string => {
     const row = {...Row} as Model["Row"];
-    if (row.Key && row.Constraint && row.ContractorID) {
+    if (row.Key && row.Constraint && row.ContractorID && row.Estimated > 0 && row.P > 0) {
       return this.props.socket.Insert('APU', row);
     }
     return '';
