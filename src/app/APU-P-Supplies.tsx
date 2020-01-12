@@ -29,12 +29,19 @@ export class APUPSupplies
     props.socket.Subscribe('APU-P-Supplies');
   }
 
-  private onUpdate = (row: Row): void => {
-    this.props.socket.Update('APU-P-Supplies', row);
+  private onUpdate = (Row: Row): void => {
+    const row = {...Row} as Model["Row"];
+    if (row.SupplyID && row.APUID && row.P) {
+      this.props.socket.Update('APU-P-Supplies', row);
+    }
   }
 
-  private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('APU-P-Supplies', row);
+  private onInsert = (Row: Row): string => {
+    const row = {...Row} as Model["Row"];
+    if (row.SupplyID && row.APUID && row.P) {
+      return this.props.socket.Insert('APU-P-Supplies', row);
+    }
+    return '';
   }
 
   private onDelete = (row: Row): void => {
