@@ -43,8 +43,7 @@ export class APUImportSupplies
   }
 
   private onInsert = (row: Row): string => {
-    //return this.props.socket.Insert('APU-Import-Supplies', row);
-    return '';
+    return this.props.socket.Insert('APU-Import-Supplies', row);
   }
 
   private onDelete = (row: Row): void => {
