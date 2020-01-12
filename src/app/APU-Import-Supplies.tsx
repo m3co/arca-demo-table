@@ -37,8 +37,6 @@ export class APUImportSupplies
         row.Unit = null;
         row.Type = null;
         row.Estimated = null;
-      } else {
-        row.SupplyID = null;
       }
       this.props.socket.Update('APU-Import-Supplies', row);
     }
