@@ -6,6 +6,7 @@ import { BudgetAAU } from './Budget-AAU';
 import { BudgetAAUvsGeneral } from './Budget-AAU-vs-General';
 import { Projects } from './Projects';
 import { Contractors } from './Contractors';
+
 import { AAUConcretize } from './Concretize';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAU-QTO';
@@ -18,6 +19,8 @@ import { APUTasks } from './APU-Tasks';
 import { APUMetaSupplies } from './APU-MetaSupplies';
 import { APUPSupplies } from './APU-P-Supplies';
 import { APUImportSupplies } from './APU-Import-Supplies';
+
+import { AEU } from './AEU';
 
 import { FACADReports } from './FACAD-Reports';
 import { FACADReportFilters } from './FACAD-ReportFilters';
@@ -42,6 +45,7 @@ render(
     <button onClick={showState}>Show state</button><br />
     <Projects socket={socket} />
     <Contractors socket={socket} />
+    <AEU socket={socket} />
     <FACADpreCFTAAUKey socket={socket} />
     <APUAssign socket={socket} />
     <APU socket={socket} />
