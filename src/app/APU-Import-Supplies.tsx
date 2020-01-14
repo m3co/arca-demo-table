@@ -55,10 +55,10 @@ export class APUImportSupplies
       APUID: 0,
       SupplyID: 0,
       P: 0,
-      Description: '',
-      Unit: '',
-      Type: '',
-      Estimated: 0,
+      Description: null,
+      Unit: null,
+      Type: null,
+      Estimated: null,
     };
     return row;
   }
