@@ -16,6 +16,7 @@ import { APUAssign } from './APU-Assign';
 import { APU } from './APU';
 import { APUQTO } from './APU-QTO';
 import { APUTasks } from './APU-Tasks';
+import { APUTasksGantt } from './APU-Tasks-Gantt';
 import { APUMetaSupplies } from './APU-MetaSupplies';
 import { APUPSupplies } from './APU-P-Supplies';
 import { APUImportSupplies } from './APU-Import-Supplies';
@@ -51,6 +52,7 @@ render(
     <APU socket={socket} />
     <APUQTO socket={socket} />
     <APUTasks socket={socket} />
+    <APUTasksGantt socket={socket} />
     <APUMetaSupplies socket={socket} />
     <APUPSupplies socket={socket} />
     <APUImportSupplies socket={socket} />
