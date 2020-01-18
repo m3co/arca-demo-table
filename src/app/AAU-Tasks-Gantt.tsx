@@ -49,6 +49,8 @@ export class AAUTasksGantt
       Unit: '',
       Start: null,
       End: null,
+      P: null,
+      Q: null,
     };
     return row;
   }
