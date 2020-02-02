@@ -10,9 +10,9 @@ interface Props {
 }
 
 export class FACADReportFilters
-  extends React.Component<Props, State['Source']['FACAD-ReportFilters']>
+  extends React.Component<Props, State['Source']['FACAD-Report-Filters']>
 {
-  public readonly state: State['Source']['FACAD-ReportFilters'] = {
+  public readonly state: State['Source']['FACAD-Report-Filters'] = {
     Rows: [],
     Requests: [],
   }
@@ -21,24 +21,24 @@ export class FACADReportFilters
     super(props);
     props.socket.store.subscribe((): void => {
       const state: State = props.socket.store.getState();
-      this.setState(state.Source["FACAD-ReportFilters"]);
+      this.setState(state.Source["FACAD-Report-Filters"]);
     });
 
-    props.socket.Select('FACAD-ReportFilters');
-    props.socket.GetInfo('FACAD-ReportFilters');
-    props.socket.Subscribe('FACAD-ReportFilters');
+    props.socket.Select('FACAD-Report-Filters');
+    props.socket.GetInfo('FACAD-Report-Filters');
+    props.socket.Subscribe('FACAD-Report-Filters');
   }
 
   private onUpdate = (row: Row): void => {
-    this.props.socket.Update('FACAD-ReportFilters', row);
+    this.props.socket.Update('FACAD-Report-Filters', row);
   }
 
   private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('FACAD-ReportFilters', row);
+    return this.props.socket.Insert('FACAD-Report-Filters', row);
   }
 
   private onDelete = (row: Row): void => {
-    this.props.socket.Delete('FACAD-ReportFilters', row);
+    this.props.socket.Delete('FACAD-Report-Filters', row);
   }
 
   private provideEmptyRow = (): Model["Row"] => {
@@ -56,7 +56,7 @@ export class FACADReportFilters
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
-      Title={"FACAD-ReportFilters"}
+      Title={"FACAD-Report-Filters"}
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
