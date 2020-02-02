@@ -11,6 +11,7 @@ import { AAUConcretize } from './Concretize';
 import { AAU } from './AAU';
 import { AAUQTO } from './AAU-QTO';
 import { AAUTasksGantt } from './AAU-Tasks-Gantt';
+import { AAUAPUTasksGantt } from './AAU-APU-Tasks-Gantt';
 
 import { APUAssign } from './APU-Assign';
 import { APU } from './APU';
@@ -44,6 +45,7 @@ function showState(): void {
 render(
   <React.Fragment>
     <button onClick={showState}>Show state</button><br />
+
     <Projects socket={socket} />
     <Contractors socket={socket} />
     <AEU socket={socket} />
@@ -67,6 +69,7 @@ render(
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
+    <AAUAPUTasksGantt socket={socket} />
     <TasksMonthCashFlowAAU socket={socket} />
   </React.Fragment>,
   document.getElementById("root")
