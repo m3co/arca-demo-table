@@ -33,38 +33,13 @@ export class AAUTasksGantt
     this.props.socket.Update('AAU-Tasks-Gantt', row);
   }
 
-  private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('AAU-Tasks-Gantt', row);
-  }
-
-  private onDelete = (row: Row): void => {
-    this.props.socket.Delete('AAU-Tasks-Gantt', row);
-  }
-
-  private provideEmptyRow = (): Model["Row"] => {
-    const row: Model["Row"] = {
-      Key: '',
-      Constraint: '',
-      Description: '',
-      Unit: '',
-      Start: null,
-      End: null,
-      P: null,
-      Q: null,
-    };
-    return row;
-  }
-
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
       Title={"AAU-Tasks-Gantt"}
       Info={Info}
       Rows={Rows}
-      onInsert={this.onInsert}
-      onDelete={this.onDelete}
       onUpdate={this.onUpdate}
-      provideEmptyRow={this.provideEmptyRow}
       Requests={Requests} />
   }
 }

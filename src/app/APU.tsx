@@ -51,10 +51,10 @@ export class APU
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
-      Key: null,
-      Constraint: null,
-      ContractorID: null,
-      Description: '',
+      Key: '',
+      Constraint: '',
+      ContractorID: 0,
+      Description: null,
       Unit: null,
       P: 0,
       Price: null,

@@ -33,40 +33,13 @@ export class BudgetAAU
     this.props.socket.Update('Budget-AAU', row);
   }
 
-  private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('Budget-AAU', row);
-  }
-
-  private onDelete = (row: Row): void => {
-    this.props.socket.Delete('Budget-AAU', row);
-  }
-
-  private provideEmptyRow = (): Model["Row"] => {
-    const row: Model["Row"] = {
-      Project: 0,
-      Key: null,
-      Description: '',
-      Unit: '',
-      Q: null,
-      P: null,
-      Estimated: 0,
-      TotalEstimated: 0,
-      SummEstimated: 0,
-      RateEstimated: 0,
-    };
-    return row;
-  }
-
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
       Title={"Budget-AAU"}
       Info={Info}
       Rows={Rows}
-      onInsert={this.onInsert}
-      onDelete={this.onDelete}
       onUpdate={this.onUpdate}
-      provideEmptyRow={this.provideEmptyRow}
       Requests={Requests} />
   }
 }

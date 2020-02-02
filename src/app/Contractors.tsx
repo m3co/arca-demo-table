@@ -45,7 +45,6 @@ export class Contractors
     const row: Model["Row"] = {
       ID: 0,
       Name: '',
-      Information: '',
     };
     return row;
   }

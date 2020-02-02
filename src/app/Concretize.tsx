@@ -41,21 +41,6 @@ export class AAUConcretize
     this.props.socket.Delete('AAU-Concretize', row);
   }
 
-  private provideEmptyRow = (): Model["Row"] => {
-    const row: Model["Row"] = {
-      Project: null,
-      Concreted: false,
-      Key: null,
-      Parent: null,
-      Expand: false,
-      Description: '',
-      Unit: '',
-      P: null,
-      Estimated: 0,
-    };
-    return row;
-  }
-
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
@@ -65,7 +50,6 @@ export class AAUConcretize
       onInsert={this.onInsert}
       onDelete={this.onDelete}
       onUpdate={this.onUpdate}
-      provideEmptyRow={this.provideEmptyRow}
       Requests={Requests} />
   }
 }

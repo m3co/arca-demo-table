@@ -41,14 +41,10 @@ export class AAUQTO
     return this.props.socket.Insert('AAU-QTO', row);
   }
 
-  private onDelete = (row: Row): void => {
-    this.props.socket.Delete('AAU-QTO', row);
-  }
-
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
-      Key: null,
-      Constraint: null,
+      Key: '',
+      Constraint: '',
       Q: 0,
       CAD: false,
     };
@@ -62,7 +58,6 @@ export class AAUQTO
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
-      onDelete={this.onDelete}
       onUpdate={this.onUpdate}
       provideEmptyRow={this.provideEmptyRow}
       Requests={Requests} />

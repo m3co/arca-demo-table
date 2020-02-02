@@ -62,7 +62,7 @@ render(
     <FACADCFTAAU socket={socket} />
     <FACADCFTFiltersAAU socket={socket} />
     <FACADReports socket={socket} />
-    <FACADReportFilters socket={socket} />
+    { /* <FACADReportFilters socket={socket} /> */ }
     <FACADpreCFTAAU socket={socket} />
     <AAU socket={socket} />
     <AAUQTO socket={socket} />

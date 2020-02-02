@@ -33,41 +33,13 @@ export class APUTasksGantt
     this.props.socket.Update('APU-Tasks-Gantt', row);
   }
 
-  private onInsert = (row: Row): string => {
-    return this.props.socket.Insert('APU-Tasks-Gantt', row);
-  }
-
-  private onDelete = (row: Row): void => {
-    this.props.socket.Delete('APU-Tasks-Gantt', row);
-  }
-
-  private provideEmptyRow = (): Model["Row"] => {
-    const row: Model["Row"] = {
-      ID: 0,
-      ContractorID: 0,
-      Key: '',
-      Constraint: '',
-      Description: '',
-      Unit: '',
-      Status: '',
-      P: 0,
-      Q: 0,
-      Start: null,
-      End: null,
-    };
-    return row;
-  }
-
   public render(): JSX.Element {
     const { Info, Rows, Requests } = this.state;
     return <Table
       Title={"APU-Tasks-Gantt"}
       Info={Info}
       Rows={Rows}
-      onInsert={this.onInsert}
-      onDelete={this.onDelete}
       onUpdate={this.onUpdate}
-      provideEmptyRow={this.provideEmptyRow}
       Requests={Requests} />
   }
 }

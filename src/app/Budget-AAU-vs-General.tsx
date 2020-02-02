@@ -44,15 +44,15 @@ export class BudgetAAUvsGeneral
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       Project: 0,
-      Key: null,
-      Description: '',
-      Unit: '',
-      Q: null,
-      P: null,
+      Key: '',
+      Description: null,
+      Unit: null,
+      Q: 0,
       Estimated: 0,
       TotalEstimated: 0,
       SummEstimated: 0,
-      RateEstimated: 0,
+      RateEstimated: null,
+      P: null,
     };
     return row;
   }

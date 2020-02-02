@@ -37,10 +37,6 @@ export class APUQTO
     return this.props.socket.Insert('APU-QTO', row);
   }
 
-  private onDelete = (row: Row): void => {
-    this.props.socket.Delete('APU-QTO', row);
-  }
-
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
       ID: 0,
@@ -57,7 +53,6 @@ export class APUQTO
       Info={Info}
       Rows={Rows}
       onInsert={this.onInsert}
-      onDelete={this.onDelete}
       onUpdate={this.onUpdate}
       provideEmptyRow={this.provideEmptyRow}
       Requests={Requests} />

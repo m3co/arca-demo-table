@@ -43,11 +43,11 @@ export class AAU
 
   private provideEmptyRow = (): Model["Row"] => {
     const row: Model["Row"] = {
-      Key: null,
+      Key: '',
       Parent: null,
       Expand: false,
-      Description: '',
-      Unit: '',
+      Description: null,
+      Unit: null,
       P: null,
       Estimated: 0,
     };
