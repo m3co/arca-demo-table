@@ -14,6 +14,7 @@ export class AAUAPUTasksGantt
 {
   public readonly state: State['Source']['AAU-APU-Tasks-Gantt'] = {
     Rows: [],
+    Aggs: [],
     Requests: [],
   }
 
