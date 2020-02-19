@@ -21,6 +21,7 @@ import { APUTasksGantt } from './APU-Tasks-Gantt';
 import { APUMetaSupplies } from './APU-MetaSupplies';
 import { APUPSupplies } from './APU-P-Supplies';
 import { APUImportSupplies } from './APU-Import-Supplies';
+import { APUImportSuppliesInApp } from './APU-Import-Supplies-in-app';
 
 import { AEU } from './AEU';
 
@@ -34,9 +35,11 @@ import { TasksMonthCashFlowAAU } from './Tasks-Month-CashFlow-AAU';
 
 import { ARCASocket, reducer } from 'arca-redux';
 import { createStore } from 'redux';
+import Socket from 'socket.io-client';
 
+const connection = Socket();
 const store = createStore(reducer);
-const socket = new ARCASocket(store);
+const socket = new ARCASocket(store, connection);
 
 function showState(): void {
   console.log(store.getState());
@@ -56,6 +59,7 @@ render(
     <APUTasks socket={socket} />
     <APUTasksGantt socket={socket} />
     <APUMetaSupplies socket={socket} />
+    <APUImportSuppliesInApp socket={socket} />
     <APUPSupplies socket={socket} />
     <APUImportSupplies socket={socket} />
     <BudgetAAU socket={socket} />
