@@ -51,32 +51,32 @@ render(
     <button onClick={showState}>Show state</button><br />
 
     <Projects socket={socket} />
-    <Contractors socket={socket} />
-    <AEU socket={socket} />
-    <FACADpreCFTAAUKey socket={socket} />
+
     <APUAssign socket={socket} />
-    <APU socket={socket} />
-    <APUQTO socket={socket} />
-    <APUTasks socket={socket} />
-    <APUTasksGantt socket={socket} />
-    <APUMetaSupplies socket={socket} />
-    <APUImportSuppliesInApp socket={socket} />
-    <APUPSupplies socket={socket} />
-    <APUImportSupplies socket={socket} />
-    <BudgetAAU socket={socket} />
-    <BudgetAAUvsGeneral socket={socket} />
-    <AAUConcretize socket={socket} />
-    <FACADCFTAAU socket={socket} />
-    <FACADCFTFiltersAAU socket={socket} />
-    <FACADReports socket={socket} />
-    <FACADReportFilters socket={socket} />
-    <FACADpreCFTAAU socket={socket} />
+
     <AAU socket={socket} />
     <AAUQTO socket={socket} />
     <AAUTasksGantt socket={socket} />
     <AAUAPUTasksGantt socket={socket} />
     <AAUAPUAEUTasksGantt socket={socket} />
-    <TasksMonthCashFlowAAU socket={socket} />
+    <TasksMonthCashFlowAAU socket={socket} /> 
+    <APU socket={socket} />
+    <APUQTO socket={socket} />
+    <APUTasks socket={socket} />
+    <APUTasksGantt socket={socket} />
+    <APUMetaSupplies socket={socket} />
+
+    <APUPSupplies socket={socket} />
+    <APUImportSupplies socket={socket} />
+
+    <BudgetAAUvsGeneral socket={socket} />
+    <BudgetAAU socket={socket} />
+    <AAUConcretize socket={socket} />
+
+    <Contractors socket={socket} />
+    <APUImportSuppliesInApp socket={socket} />
+    
+    <AEU socket={socket} />
   </React.Fragment>,
   document.getElementById("root")
 );
